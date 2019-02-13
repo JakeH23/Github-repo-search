@@ -35,17 +35,9 @@ class App extends Component {
 		const repoName = event.target.elements.search.value;
 		const api_call = await fetch(`https://api.github.com/search/repositories?q=${repoName}in:name`);
 		const data = await api_call.json();
-		if (repoName) {
-			this.setState({
-				results: data.items
-			});
-		} else {
-			this.setState({
-				results: undefined
-			}).catch((err) => {
-				console.log(err);
-			});
-		}
+		this.setState({
+			results: data.items
+		});
 	};
 }
 
