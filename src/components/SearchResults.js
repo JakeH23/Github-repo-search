@@ -3,14 +3,13 @@ import Popup from 'reactjs-popup';
 import moment from 'moment';
 
 const SearchResults = (props) => {
-	console.log(props.results);
 	return (
 		<Fragment>
 			{props.results.map((repo) => (
 				<ul key={repo.id}>
 					<Popup
 						trigger={
-							<button>
+							<button type='button' className='btn btn-primary btn-lg btn-block'>
 								<li>{repo.name}</li>
 							</button>
 						}
@@ -38,12 +37,12 @@ const SearchResults = (props) => {
 							<p>
 								<span className='modal_title'>Last updated: </span>
 								{moment(repo.updated_at).startOf('second').fromNow()}
-								{}
 							</p>
 						</div>
 					</Popup>
 				</ul>
 			))}
+			{props.err && <p>{props.err}</p>}
 		</Fragment>
 	);
 };

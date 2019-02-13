@@ -42,6 +42,8 @@ class App extends Component {
 		} else {
 			this.setState({
 				results: undefined
+			}).catch((err) => {
+				console.log(err);
 			});
 		}
 	};

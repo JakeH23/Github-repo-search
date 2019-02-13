@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const SearchForm = (props) => (
-	<form onSubmit={props.getInfo}>
-		<input type='text' name='search' placeholder='Keyword...' />
-		<button>Search Repositories</button>
-	</form>
+	<Fragment>
+		<form onSubmit={props.getInfo}>
+			<input type='text' name='search' placeholder='Keyword...' required='required' />
+			<button>Search</button>
+		</form>
+	</Fragment>
 );
 export default SearchForm;

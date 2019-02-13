@@ -56,7 +56,6 @@ body {
 	background-color: #2c3e50;
 	height: 90vh;
 	padding-top: 20px;
-	padding-left: 20px;
 	overflow-y: scroll;
 }
 
@@ -97,14 +96,75 @@ button {
 	font-weight: 100;
 }
 
-button:active {
+button:hover {
 	outline: none;
+	background-color: #e67e22;
 }
 
+ul {
+	padding: 0;
+}
 li {
 	list-style-type: none;
 }
 
 .modal_title {
 	font-weight: bold;
+}
+
+.btn-primary {
+	border: 0;
+	padding: 8px 20px;
+	margin: 0 2px;
+	border-radius: 2px;
+	font-weight: lighter;
+	letter-spacing: 1px;
+	font-size: 15px;
+	cursor: pointer;
+	background-color: #f16051;
+	color: #fff;
+	font-weight: 100;
+}
+
+.btn-primary:hover {
+	background-color: #e67e22;
+}
+
+@media screen and (max-width: 600px) {
+	.main {
+		height: 95vh;
+		width: 90%;
+	}
+
+	.title-container {
+		height: 95vh;
+		align-items: baseline;
+		padding-top: 15px;
+	}
+
+	.title-container__title {
+		font-size: 25px;
+		letter-spacing: 1px;
+	}
+
+	.form-container {
+		height: 95vh;
+		padding-top: 15px;
+	}
+
+	input[type="text"] {
+		width: 100%;
+		padding-bottom: 2px;
+		margin-bottom: 10px;
+	}
+
+	button {
+		padding: 4px 10px;
+		margin-bottom: 10px;
+	}
+
+	.btn-primary {
+		padding: 4px 10px;
+		margin: 0px;
+	}
 }
