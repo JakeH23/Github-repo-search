@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class SearchForm extends Component {
-	render() {
-		return <div>Search Form</div>;
-	}
-}
-
+const SearchForm = (props) => (
+	<form onSubmit={props.getInfo}>
+		<input type='text' name='search' placeholder='Keyword...' />
+		<button>Search Repositories</button>
+	</form>
+);
 export default SearchForm;
