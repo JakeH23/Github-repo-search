@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
-const SearchForm = (props) => (
+const SearchForm = ({ getInfo }) => (
 	<Fragment>
-		<form onSubmit={props.getInfo}>
+		<form onSubmit={getInfo}>
 			<input aria-label='search' type='text' name='search' placeholder='Keyword...' required='required' />
 			<button>Search</button>
 		</form>

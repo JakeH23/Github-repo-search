@@ -6,18 +6,16 @@ const contentStyle = {
 	width: '70%',
 	paddingTop: '20px',
 	borderRadius: '10px',
-	backgroundColor: '#dbdbdb',
-	overFlowx: 'auto'
+	backgroundColor: '#dbdbdb'
 };
 
 class SearchResults extends Component {
 	render() {
+		const { err, results } = this.props;
 		return (
 			<Fragment>
-				{this.props.err && (
-					<p className='error'>There are no repositories matching this keyword, please search again</p>
-				)}
-				{this.props.results.map(
+				{err && <p className='error'>There are no repositories matching this keyword, please search again</p>}
+				{results.map(
 					({ id, name, owner, html_url, description, forks_count, open_issues_count, updated_at }) => (
 						<ul key={id}>
 							<Popup

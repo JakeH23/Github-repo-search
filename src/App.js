@@ -3,40 +3,33 @@ import './App.css';
 import Header from './components/Header';
 import SearchForm from './components/SearchForm';
 import SearchResults from './components/SearchResults';
-import Loading from './Loading';
 
 class App extends Component {
 	state = {
 		results: [],
-		err: false,
-		isLoading: true
+		err: false
 	};
 	render() {
-		if (this.props.isLoading) return <Loading />;
-		else
-			return (
-				<div className='App'>
-					<div className='wrapper'>
-						<div className='main'>
-							<div className='container'>
-								<div className='row'>
-									<div className='col-5 title-container'>
-										<Header />
-									</div>
-									<div className='col-7 form-container'>
-										<SearchForm getInfo={this.getInfo} />
-										<SearchResults
-											err={this.state.err}
-											results={this.state.results}
-											isLoading={this.state.isLoading}
-										/>
-									</div>
+		const { err, results } = this.state;
+		return (
+			<div className='App'>
+				<div className='wrapper'>
+					<div className='main'>
+						<div className='container'>
+							<div className='row'>
+								<div className='col-5 title-container'>
+									<Header />
+								</div>
+								<div className='col-7 form-container'>
+									<SearchForm getInfo={this.getInfo} />
+									<SearchResults err={err} results={results} />
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			);
+			</div>
+		);
 	}
 
 	getInfo = async (event) => {
@@ -52,8 +45,7 @@ class App extends Component {
 					});
 				} else {
 					this.setState({
-						err: true,
-						isLoading: false
+						err: true
 					});
 				}
 			})
