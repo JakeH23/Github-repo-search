@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Popup from 'reactjs-popup';
 import moment from 'moment';
 import Loading from './Loading';
+import './SearchResults.css';
 
 const contentStyle = {
 	width: '70%',

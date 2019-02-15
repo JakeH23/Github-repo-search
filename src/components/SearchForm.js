@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import './SearchForm.css';
 
 const SearchForm = ({ handleSubmit }) => (
 	<Fragment>

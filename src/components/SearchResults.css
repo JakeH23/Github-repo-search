@@ -1,0 +1,47 @@
+ul {
+	padding: 0;
+}
+li {
+	list-style-type: none;
+}
+
+.modal_title {
+	font-weight: bold;
+}
+
+.btn-primary {
+	border: 0;
+	padding: 8px 20px;
+	margin: 0 2px;
+	border-radius: 2px;
+	letter-spacing: 1px;
+	font-size: 15px;
+	cursor: pointer;
+	background-color: grey;
+	color: #fff;
+}
+
+.btn-primary:hover {
+	background-color: darkgrey;
+}
+
+.error {
+	color: white;
+}
+
+.loading_text {
+	color: white;
+	font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+	.btn-primary {
+		padding: 4px 10px;
+		margin: 0px;
+		font-size: 12px;
+	}
+
+	.loading_text {
+		font-size: 16px;
+	}
+}
