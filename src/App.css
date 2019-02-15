@@ -126,6 +126,11 @@ li {
 .error {
 	color: white;
 }
+
+.loading_text {
+	color: white;
+	font-size: 20px;
+}
 @media screen and (max-width: 600px) {
 	.main {
 		height: 95vh;

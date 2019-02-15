@@ -10,7 +10,7 @@ class App extends Component {
 		err: false
 	};
 	render() {
-		const { err, results } = this.state;
+		const { err, results, loading } = this.state;
 		return (
 			<div className='App'>
 				<div className='wrapper'>
@@ -21,8 +21,8 @@ class App extends Component {
 									<Header />
 								</div>
 								<div className='col-7 form-container'>
-									<SearchForm getInfo={this.getInfo} />
-									<SearchResults err={err} results={results} />
+									<SearchForm handleSubmit={this.handleSubmit} />
+									<SearchResults err={err} results={results} loading={loading} />
 								</div>
 							</div>
 						</div>
@@ -32,20 +32,28 @@ class App extends Component {
 		);
 	}
 
-	getInfo = async (event) => {
+	handleSubmit = (event) => {
 		event.preventDefault();
 		const repoName = event.target.elements.search.value;
+		this.setState({ loading: true }, () => {
+			this.getInfo(repoName);
+		});
+	};
+
+	getInfo = async (repoName) => {
 		await (await fetch(`https://api.github.com/search/repositories?q=${repoName}in:name`))
 			.json()
 			.then(({ items }) => {
 				if (items.length > 0) {
 					this.setState({
 						results: items,
-						err: false
+						err: false,
+						loading: false
 					});
 				} else {
 					this.setState({
-						err: true
+						err: true,
+						loading: false
 					});
 				}
 			})
