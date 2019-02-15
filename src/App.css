@@ -131,6 +131,7 @@ li {
 	color: white;
 	font-size: 20px;
 }
+
 @media screen and (max-width: 600px) {
 	.main {
 		height: 95vh;
@@ -172,5 +173,10 @@ li {
 	.btn-primary {
 		padding: 4px 10px;
 		margin: 0px;
+		font-size: 12px;
+	}
+
+	.loading_text {
+		font-size: 16px;
 	}
 }
